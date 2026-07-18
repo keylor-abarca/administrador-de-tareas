@@ -3,17 +3,19 @@
 archivo = "tareas.txt"
 
 while True:
-    print("bienvenido a tu administrador de tareas")
+    print("\n===== ADMINISTRADOR DE TAREAS =====")
 
-# Mostrar tareas
-print("Esta es tu lista de tareas:\n")
-try:
-    with open(archivo, "r",encoding="utf-8") as f:
+    # Mostrar tareas
+    print("\nEsta es tu lista de tareas:\n")
+
+    with open(archivo, "r") as f:
         tareas = f.readlines()
-        
-        if len(tareas) == 0:
-            print("No hay treas")
 
+    if len(tareas) == 0:
+        print("No hay tareas pendientes.")
+    else:
+        for i, tarea in enumerate(tareas, start=1):
+            print(f"{i}. {tarea.strip()}")
 
 # Menu
 
